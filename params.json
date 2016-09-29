@@ -1,0 +1,6 @@
+{
+  "name": "My",
+  "tagline": "white",
+  "body": "$(function(){\r\n  var menu = $('#highlight_menu');\r\n  \r\n  $(document.body).on('mouseup', function (evt) {\r\n    var s = document.getSelection(),\r\n      r = s.getRangeAt(0);\r\n    if (r && s.toString()) {\r\n      var p = r.getBoundingClientRect();\r\n      if (p.left || p.top) {\r\n        menu.css({\r\n          left: (p.left + (p.width / 2)) - (menu.width() / 2),\r\n          top: (p.top - menu.height() - 10),\r\n          display: 'block',\r\n          opacity: 0\r\n      })\r\n      .animate({\r\n        opacity:1\r\n      }, 300);\r\n      \r\n      setTimeout(function() {\r\n        menu.addClass('highlight_menu_animate');\r\n      }, 10);\r\n      return;\r\n    }\r\n    }\r\n    menu.animate({ opacity:0 }, function () {\r\n      menu.hide().removeClass('highlight_menu_animate');\r\n  });\r\n  });\r\n});",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
